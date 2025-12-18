@@ -220,7 +220,7 @@ const TimeEntriesTable = ({ task, isReadOnly = false }: Props) => {
   if (loading) return <Skeleton active />;
 
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       {!isReadOnly && (
         <>
           <Button

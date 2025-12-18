@@ -46,7 +46,7 @@ const DetailsCardLayout = <T extends object>({
         {model
           ? Object.entries(model)
               .filter(
-                ([key, value]) =>
+                ([value]) =>
                   typeof value === "string" ||
                   typeof value === "number" ||
                   dayjs.isDayjs(value)

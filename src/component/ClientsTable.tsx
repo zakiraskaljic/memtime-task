@@ -134,7 +134,7 @@ const ClientsTable: React.FC = () => {
           showSizeChanger: true
         }}
         loadChildren={loadClientProjects}
-        renderChildren={(projects, client) => (
+        renderChildren={(projects) => (
           <ExpandableTable
             columns={clientProjectColumns(navigate)}
             dataSource={projects}

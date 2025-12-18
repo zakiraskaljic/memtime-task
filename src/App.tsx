@@ -12,16 +12,18 @@ const App = () => {
   return (
     <>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<ClientsPage />} />
-        <Route path="/clients" element={<ClientsPage />} />
-        <Route path="/clients/:id" element={<ClientDetailsPage />} />
-        <Route path="/projects/:id" element={<ProjectDetailsPage />} />
-        <Route path="/tasks/:id" element={<TaskDetailsPage />} />
-        <Route path="/time-entries" element={<TimeEntriesPage />} />
-        <Route path="/time-entries/:id" element={<TimeEntryDetailsPage />} />
-        <Route path="*" element={<ContentNotFoundPage />} />
-      </Routes>
+      <div style={{ padding: "0 50px" }}>
+        <Routes>
+          <Route path="/" element={<ClientsPage />} />
+          <Route path="/clients" element={<ClientsPage />} />
+          <Route path="/clients/:id" element={<ClientDetailsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailsPage />} />
+          <Route path="/tasks/:id" element={<TaskDetailsPage />} />
+          <Route path="/time-entries" element={<TimeEntriesPage />} />
+          <Route path="/time-entries/:id" element={<TimeEntryDetailsPage />} />
+          <Route path="*" element={<ContentNotFoundPage />} />
+        </Routes>
+      </div>
     </>
   );
 };
