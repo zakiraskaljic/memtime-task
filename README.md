@@ -12,7 +12,9 @@ Manage clients, projects, tasks, and time entries. Navigate clients, their proje
 - **Task Management:** Manage time entries associated with tasks (create, update, delete)
 - **Time Tracking Overview:** See all time entries across the system in one place
 
-## Installations
+## Installation
 
-- npm install
-- npm run dev
+```bash
+npm install
+npm run dev
+```
