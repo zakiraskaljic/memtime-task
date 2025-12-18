@@ -64,7 +64,7 @@ export const TimeEntryService = (): ITimeEntryService => {
       const data = await response.json();
       const mapped = TimeEntryListMapper(data.items ?? data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return { data: mapped, total: mapped.length };
     },
     async getTimeEntryById(id: string): Promise<ITimeEntry> {
@@ -79,7 +79,7 @@ export const TimeEntryService = (): ITimeEntryService => {
       const data = await response.json();
       const mapped = TimeEntryMapper(data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return mapped;
     },
     async createTimeEntry(timeEntry: ITimeEntry): Promise<ITimeEntry> {

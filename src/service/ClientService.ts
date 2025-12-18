@@ -56,7 +56,7 @@ export const ClientService = (): IClientService => {
       const data = await response.json();
       const mapped = ClientListMapper(data.items ?? data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return { data: mapped, total: mapped.length };
     },
 
@@ -71,7 +71,7 @@ export const ClientService = (): IClientService => {
       const data = await response.json();
       const mapped = ClientMapper(data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return mapped;
     },
 
@@ -98,7 +98,7 @@ export const ClientService = (): IClientService => {
       const data = await response.json();
       const mapped = ProjectListMapper(data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return { data: mapped, total: mapped.length };
     }
   };

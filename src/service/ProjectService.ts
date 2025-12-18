@@ -42,7 +42,7 @@ export const ProjectService = (): IProjectService => {
       const data = await response.json();
       const mapped = ProjectMapper(data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return mapped;
     },
 
@@ -64,7 +64,7 @@ export const ProjectService = (): IProjectService => {
       const data = await response.json();
       const mapped = TaskListMapper(data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return { data: mapped, total: mapped.length };
     }
   };

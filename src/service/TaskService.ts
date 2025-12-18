@@ -38,7 +38,7 @@ export const TaskService = (): ITaskService => {
       const data = await response.json();
       const mapped = TaskMapper(data);
 
-      LocalStorageCache.set(cacheKey, mapped, 60_000);
+      LocalStorageCache.set(cacheKey, mapped, 180_000);
       return mapped;
     }
   };

@@ -60,13 +60,13 @@ const TimeEntriesTable = ({ task, isReadOnly = false }: Props) => {
         sortBy: sortField ?? sorter.field,
         order: sortOrder ?? sorter.order
       });
-      const filtered = task?.id
+      const filteredTimeEntries = task?.id
         ? data.filter((e) => Number(e.taskId) === Number(task.id))
         : data;
-      setTimeEntries(filtered);
+      setTimeEntries(filteredTimeEntries);
       setPagination((prev) => ({ ...prev, current: page, pageSize, total }));
     } catch (error) {
-      notification.error({ message: "Failed to load time entries" });
+      notification.error({ title: "Failed to load time entries" });
     } finally {
       setLoading(false);
     }
@@ -111,10 +111,10 @@ const TimeEntriesTable = ({ task, isReadOnly = false }: Props) => {
   const handleDelete = async (entry: ITimeEntry) => {
     try {
       await timeEntryService.deleteTimeEntry(entry.id);
-      notification.success({ message: "Deleted successfully" });
+      notification.success({ title: "Deleted successfully" });
       loadTimeEntries();
     } catch {
-      notification.error({ message: "Failed to delete entry" });
+      notification.error({ title: "Failed to delete entry" });
     }
   };
 
